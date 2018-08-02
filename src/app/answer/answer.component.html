@@ -1,0 +1,25 @@
+<div class="answer-container">
+
+  <iframe class="youtube" width="100%" height="250px" [src]='this.youtubePath' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+  <!-- <p class="count"> #{{globalService.gameCount}} </p> -->
+
+  <div class="album-container">
+    <img class="album-img" [src]="albumPath">
+
+    <div class="album-info">
+      <div class="title">{{musicInfo?.music_name}}</div>
+      <div class="singer">{{musicInfo?.musician}}</div>
+      <div class="album-name">{{musicInfo?.album_name}}</div>
+      <div class="album-date">{{musicInfo?.date}}</div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+  <img (click)="onClick_next()" class="btn" [src]="countImgPath"/>
+
+<!-- <button (click)="onClick_next()">다음문제</button> -->
