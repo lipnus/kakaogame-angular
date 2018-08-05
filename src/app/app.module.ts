@@ -7,26 +7,32 @@ import { AppRoutingModule } from './app.route';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { ModalModule } from "angular-custom-modal";
+
 
 // [Service]
-import { GlobalService } from './service/global.service';
-import { PostToServerService } from './service/post-to-server.service';
-import { CashService } from './service/cash.service';
+import { GlobalService } from './service/index';
+import { PostToServerService } from './service/index';
+import { CashService } from './service/index';
+import { ModalService } from "./service/index";
 
 
 // [Component]
 import { AppComponent } from './app.component';
-import { SplashComponent } from './splash/splash.component';
-import { MainpageComponent } from './mainpage/mainpage.component';
-import { RankingComponent } from './ranking/ranking.component';
-import { InformationComponent } from './information/information.component';
-import { QuizComponent } from './quiz/quiz.component';
-import { AnswerComponent } from './answer/answer.component';
-import { ResultComponent } from './result/result.component';
-import { JoinComponent } from './join/join.component';
+import { SplashComponent } from './component/splash/splash.component';
+import { MainpageComponent } from './component/mainpage/mainpage.component';
+import { RankingComponent } from './component/ranking/ranking.component';
+import { InformationComponent } from './component/information/information.component';
+import { QuizComponent } from './component/quiz/quiz.component';
+import { AnswerComponent } from './component/answer/answer.component';
+import { ResultComponent } from './component/result/result.component';
+import { JoinComponent } from './component/join/join.component';
+import { ModalComponent } from './directive/index';
 
 //[Guard]
 import { AuthGuard } from './guard/index';
+import { StageComponent } from './component/stage/stage.component';
+
 
 
 @NgModule({
@@ -39,7 +45,9 @@ import { AuthGuard } from './guard/index';
     QuizComponent,
     AnswerComponent,
     ResultComponent,
-    JoinComponent
+    JoinComponent,
+    StageComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +56,7 @@ import { AuthGuard } from './guard/index';
     HttpClientModule,
     AppRoutingModule,
     HttpModule,
+    // ModalModule,
   ],
   providers: [
     GlobalService,
@@ -55,6 +64,7 @@ import { AuthGuard } from './guard/index';
     {provide: LocationStrategy, useClass: HashLocationStrategy},
     AuthGuard,
     CashService,
+    ModalService,
   ],
   bootstrap: [AppComponent]
 })

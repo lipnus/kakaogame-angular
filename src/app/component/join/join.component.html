@@ -1,0 +1,31 @@
+<div class="join-container">
+
+  <img class="testver" src="/assets/testver.png">
+  <img class="backgroud-img" src="/assets/bgimg.png">
+  <img class="title" src="assets/musicquiztitle.png"/>
+
+  <div class="input-container">
+
+    <div class="input-form">
+      <form>
+        <div class="group">
+          <input class="" autocomplete="off" type="text" name="answerInput" [(ngModel)]="nicknameStr"  required="required"/><span class="highlight"></span><span class="bar"></span>
+          <label>닉네임(8자이내)</label>
+        </div>
+      </form>
+    </div>
+
+    <div class="input-form">
+      <form>
+        <div class="group">
+          <input class="" autocomplete="off" type="text" name="answerInput" [(ngModel)]="contactStr"  required="required"/><span class="highlight"></span><span class="bar"></span>
+          <label>연락처</label>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- <div class="bottom-text">닉네임은 전체 랭킹에 나타나며, 연락처는 상품전달에 사용됩니다.</div> -->
+
+    <img (click)="onClick_join()" class="btn" src="assets/next.png"/>
+</div>

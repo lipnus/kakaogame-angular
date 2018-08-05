@@ -1,0 +1,110 @@
+.container{
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+#myCanvas{
+  width: 300px;
+  height: 300px;
+  background: #909090;
+}
+
+#kakao-login{
+  position: absolute;
+  z-index: 10;
+  width: 80%;
+  height: 60px;
+  bottom: 20px;
+  left: 50%;
+  transform:translateX(-50%);
+  background: yellow;
+}
+
+#bg{
+  width: 100vw;
+  height: 100vh;
+}
+
+#logo{
+  position: absolute;
+  display: inline-block;
+  z-index: 10;
+  width: 40%;
+  top: 10%;
+  left: 50%;
+  transform:translateX(-50%);
+}
+
+#info{
+  position: absolute;
+  display: inline-block;
+  z-index: 10;
+  width: 50px;
+  left: 20px;
+  top: 20px;
+}
+
+
+
+
+.backgroud-img{
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.testver{
+  display: inline-block;
+  position: fixed;
+  width: 20%;
+  top:0;
+  right: 0;
+}
+
+.title{
+  display: inline-block;
+  position: fixed;
+  top:0;
+  width: 60%;
+  left: 50%;
+  margin-left: -30%;
+  margin-top: 36%;
+}
+
+.naver-login{
+  display: inline-block;
+  position: fixed;
+  width: 80%;
+  bottom: 0px;
+  left: 50%;
+  margin-left: -40%;
+  margin-bottom: 80px;
+}
+
+.subtitle{
+  display: inline-block;
+  position: fixed;
+  width: 40%;
+  bottom: 0px;
+  left: 50%;
+  margin-left: -20%;
+  margin-bottom: 20px;
+}
+
+.foot-container{
+  display: inline-block;
+  position: fixed;
+  width: 90%;
+  bottom: 0px;
+  left: 50%;
+  margin-left: -45%;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.foot-text{
+  color: #ffffff;
+  font-size: 12px;
+}

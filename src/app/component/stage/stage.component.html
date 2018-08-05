@@ -1,0 +1,85 @@
+
+<div class="stage-container">
+
+  <!--<canvas id="canv" #myCanvas>-->
+    <!--죄송합니다. 지원하지 않는 브라우저입니다. :(-->
+  <!--</canvas>-->
+
+  <img id="bg" [src]="bgImg" >
+
+  <div class="obj-container" *ngIf="theme==1">
+    <img *ngIf="!isPlaying" id="ch1-inactive" class="character" (click)="onClick_PlaySound()" [src]="characterImg_Inactive">
+    <img *ngIf="isPlaying" id="ch1-active" class="character" [src]="characterImg_Active">
+  </div>
+
+
+  <!--하트-->
+  <img *ngIf="userData.life>0" class="heart" src="assets/heart_filled.png"/>
+  <img *ngIf="userData?.life>1" class="heart2" src="assets/heart_filled.png"/>
+  <img *ngIf="userData?.life>2" class="heart3" src="assets/heart_filled.png"/>
+
+  <img *ngIf="userData.life<1" class="heart" src="assets/heart_blank.png"/>
+  <img *ngIf="userData?.life<2" class="heart2" src="assets/heart_blank.png"/>
+  <img *ngIf="userData?.life<3" class="heart3" src="assets/heart_blank.png"/>
+
+  <!--스테이지-->
+  <div class="stage" (click)="onClick_Test()">Stage #{{userData?.stage}}</div>
+
+  <!--포인트-->
+  <div class="point">Point <span id="point-number">{{userData?.score_stage}}</span></div>
+
+  <!--말풍선-->
+  <img *ngIf="!isPlaying" id="bubble-img"[src]="bubbleImg"/>
+  <div *ngIf="!isPlaying" id="bubble-text">{{bubbleTalking}}</div>
+
+  <!--숫자-->
+  <img class="number" [src]="numberImg"/>
+
+  <!--아이템-->
+  <img class="item" id="item1" [src]="itemImg[0]"/>
+  <img class="item" id="item2" [src]="itemImg[1]"/>
+  <img class="item" id="item3" [src]="itemImg[2]"/>
+
+
+  <!--<button class="testbtn" (click)="onClick_Test()">테스트용{{userData.life}}</button>-->
+
+  <div class="white-bg"></div>
+
+  <div class="answer-container">
+    <form>
+      <div class="group">
+        <input class="" autocomplete="off" type="text" name="answerInput" [(ngModel)]="answerText"  (keydown)="onChange_Answer()" required="required"/><span class="highlight"></span><span class="bar"></span>
+        <label>{{labelText}}</label>
+      </div>
+    </form>
+  </div>
+
+  <div ></div>
+  <img class="mola-btn" (click)="onClick_Pass()" src="assets/skip.png"/>
+  <img class="submit-btn" (click)="onClick_Submit()" src="assets/submit.png"/>
+
+</div>
+
+
+
+
+<modal id="stage-modal">
+  <div class="modal">
+    <div class="modal-title">
+      <img class="modal-faceImg" [src]="modalFaceImg"/>
+      <!--<img class="modal-icon" [src]="modalTextImg"/>-->
+    </div>
+
+    <div class="modal-body">
+      <div class="modal-songtitle">{{modalText}}</div>
+      <img class="modal-textImg" [src]="modalTextImg"/>
+      <br>
+      <div class="modal-score">{{modalScore}}</div>
+
+      <img class="modal-btn" (click)="closeModal('stage-modal');" [src]="modalBtnImg"/>
+
+    </div>
+
+  </div>
+  <div class="modal-background"></div>
+</modal>

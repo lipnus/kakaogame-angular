@@ -4,7 +4,7 @@ html,body {
   height:100%;
   margin:0;
   padding:0;
-  background: #11162F;
+  /*background: #11162F;*/
 }
 
 @font-face {
@@ -74,4 +74,116 @@ html,body {
 li span {
  line-height: 1.8;
  font-size: 1.3em;
+}
+
+
+
+
+
+/* MODAL STYLES
+-------------------------------*/
+modal {
+  /* modals are hidden by default */
+  display: none;
+
+  /* modal container fixed across whole screen */
+  /*background: #ffffff;*/
+  width: 80%;
+  height: 280px;
+
+  position: fixed;
+  top: 35vh;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -40%;
+
+  /* z-index must be higher than .modal-background */
+  z-index: 1000;
+}
+
+modal .modal-title{
+  font-size: 14px;
+  font-weight: 500;
+  padding: 15px 15px 0px 15px;
+  /*background: #ffffff;*/
+}
+
+/*캐릭터얼굴*/
+modal .modal-faceImg{
+  position: absolute;
+  display: inline-block;
+  width: 70%;
+  position:absolute; left:50%;
+  transform:translateX(-50%);
+  top: -100px;
+}
+
+modal .modal-body{
+  font-size: 13px;
+  padding: 18px;
+  width: 100%;
+  height: 280px;
+  background: #ffffff;
+  border-radius: 20px 20px 20px 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/*노래제목*/
+modal .modal-songtitle{
+  font-size: 18px;
+  margin-top: 70px;
+  margin-bottom: 15px;
+}
+
+/*텍스트이미지*/
+modal .modal-textImg{
+  display: inline-block;
+  width: 80%;
+}
+
+/*점수*/
+modal .modal-score{
+  margin-top: 10px;
+  font-size: 60px;
+  font-weight: 900;
+}
+
+/*다음으로 가기 버튼*/
+modal .modal-btn{
+  width: 180px;
+}
+
+modal .modal-background{
+  position: fixed;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #000000;
+  opacity: 0.6;
+}
+
+modal .modal-icon{
+  width: 70%;
+}
+
+modal .modal-button{
+  border: none;
+  outline: none;
+  padding: 7px;
+  font-size: 15px;
+  margin-top: 15px;
+  box-sizing: border-box;
+  background: none;
+  color: #02101b;
+  display: inline-block;
+  float:right;
+}
+
+body.modal-open {
+  /* body overflow is hidden to hide main scrollbar when modal window is open */
+  overflow: hidden;
 }
