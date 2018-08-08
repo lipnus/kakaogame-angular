@@ -3,11 +3,12 @@
 
   <img id="bg" src="assets/main_bg.png" />
   <img id="logo" src="assets/logo.png"/>
-  <img id="info" src="assets/info.png" (click)="onClick_Test()"/>
+  <img id="rank" src="assets/rank.png" (click)="onClick_Rank()"/>
+  <img id="info" src="assets/info.png" (click)="onClick_Info()"/>
 
-  <img class="scoreBox" src="assets/score_bgbox.png"/>
+  <img class="scoreBox" src="assets/score_bgbox.png" />
 
-  <table *ngIf="isJoined" (click)="onClick_Rank()" class="tg">
+  <table *ngIf="isJoined"  class="tg">
     <tr>
       <th class="tg-cpu1">
         <img class="bullet" src="assets/score_bullet.png"/>

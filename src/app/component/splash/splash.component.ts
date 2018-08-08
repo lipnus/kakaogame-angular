@@ -52,6 +52,7 @@ export class SplashComponent implements OnInit {
 
 
   onClick_kakao(){
+    console.log("!!");
     if (localStorage.getItem('user_pk')) {
       this.router.navigate(['/stage']);
     }else{
@@ -73,10 +74,8 @@ export class SplashComponent implements OnInit {
     this.postOverlap();
   }
 
-  onClick_Test(){
+  onClick_Info(){
     this.modalService.open('info-modal');
-    // localStorage.removeItem('user_pk');
-    // this.modalService.open('nickname-modal');
   }
 
 

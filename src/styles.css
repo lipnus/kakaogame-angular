@@ -17,6 +17,10 @@ html,body {
   height: 100vh;
 }
 
+.container{
+  overflow: hidden;
+}
+
 @media screen and (min-width: 500px){
   .container {
     visibility: hidden;

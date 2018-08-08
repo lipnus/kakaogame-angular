@@ -68,6 +68,8 @@
 #bg{
   width: 100%;
   height: 100%;
+
+  object-fit: cover;
 }
 
 #logo{
@@ -81,6 +83,15 @@
 }
 
 #info{
+  position: absolute;
+  display: inline-block;
+  z-index: 10;
+  width: 50px;
+  right: 20px;
+  top: 20px;
+}
+
+#rank{
   position: absolute;
   display: inline-block;
   z-index: 10;
