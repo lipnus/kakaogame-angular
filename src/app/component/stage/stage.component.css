@@ -1,7 +1,8 @@
-.stage-container{
+.container{
   width: 100%;
   height: 100%;
 }
+
 
 .testbtn{
   position:absolute;
@@ -25,19 +26,16 @@
 
 }
 
-.character{
+.character {
   position: absolute;
   z-index: 10;
   width: 55%;
-  left: 25%;
-  top: 26%;
+  left: 22%;
+  top: 50%;
+  transform:translateY(-50%);
 }
 
-#ch1-active{
-  width: 60%;
-  top: 13%;
-  left:15%;
-}
+
 
 .heart{
   position: absolute;
@@ -112,15 +110,17 @@
   position: absolute;
   z-index: 15;
   width: 280px;
-  top: 90px;
+  top: 120px;
   left: 50%;
   transform:translateX(-50%);
 }
 
 #bubble-text{
+  text-align: center;
   position: absolute;
   z-index: 15;
-  top: 110px;
+  top: 140px;
+  width: 260px;
   font-size: 18px;
   left: 50%;
   transform:translateX(-50%);

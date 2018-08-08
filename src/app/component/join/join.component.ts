@@ -16,7 +16,8 @@ import * as mGlobal from '../../global-variables';  //전역변수
 @Component({
   selector: 'app-join',
   templateUrl: './join.component.html',
-  styleUrls: ['./join.component.css', '/join.component-input.css']
+  styleUrls: ['./join.component.css', ]
+//  '/join.component-input.css'
 })
 export class JoinComponent implements OnInit {
 

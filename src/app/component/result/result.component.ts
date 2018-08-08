@@ -19,8 +19,8 @@ import * as mGlobal from '../../global-variables';  //전역변수
 })
 export class ResultComponent implements OnInit {
 
-  private score:number;
-  private rank:number;
+   score:number;
+   rank:number;
 
   constructor(
     private router: Router,

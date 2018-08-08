@@ -1,7 +1,7 @@
 
 export class UserData{
 
-  pk: number;
+  user_pk: number;
   kakao_id: number;
   nickname: string;
 
@@ -11,10 +11,14 @@ export class UserData{
   stage: number;
   life: number;
 
-  item1: number;
-  item2: number;
-  item3: number;
-  item4: number;
+  item1: string;
+  item2: string;
+  item3: string;
 
+  m_order:number;
+
+  perfect: number;
+  great: number;
+  bad: number;
 }
 

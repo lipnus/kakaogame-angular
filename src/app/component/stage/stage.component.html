@@ -1,5 +1,5 @@
-
-<div class="stage-container">
+<img class="pcImg" src="assets/weblanding.jpg"/>
+<div class="container">
 
   <!--<canvas id="canv" #myCanvas>-->
     <!--죄송합니다. 지원하지 않는 브라우저입니다. :(-->
@@ -7,10 +7,14 @@
 
   <img id="bg" [src]="bgImg" >
 
-  <div class="obj-container" *ngIf="theme==1">
-    <img *ngIf="!isPlaying" id="ch1-inactive" class="character" (click)="onClick_PlaySound()" [src]="characterImg_Inactive">
-    <img *ngIf="isPlaying" id="ch1-active" class="character" [src]="characterImg_Active">
+  <!--*ngIf="theme==1"-->
+  <div class="obj-container" >
+    <img *ngIf="!isPlaying" class="character" (click)="onClick_PlaySound()" [src]="characterImg_Inactive">
+    <img *ngIf="isPlaying" class="character" [src]="characterImg_Active">
   </div>
+
+
+
 
 
   <!--하트-->
@@ -29,16 +33,16 @@
   <div class="point">Point <span id="point-number">{{userData?.score_stage}}</span></div>
 
   <!--말풍선-->
-  <img *ngIf="!isPlaying" id="bubble-img"[src]="bubbleImg"/>
-  <div *ngIf="!isPlaying" id="bubble-text">{{bubbleTalking}}</div>
+  <img *ngIf="!isPlaying" id="bubble-img"[src]="bubbleImg"  (click)="onClick_Bubble()"/>
+  <div *ngIf="!isPlaying" (click)="onClick_Bubble()" id="bubble-text">{{bubbleTalking}}</div>
 
   <!--숫자-->
   <img class="number" [src]="numberImg"/>
 
   <!--아이템-->
-  <img class="item" id="item1" [src]="itemImg[0]"/>
-  <img class="item" id="item2" [src]="itemImg[1]"/>
-  <img class="item" id="item3" [src]="itemImg[2]"/>
+  <img class="item" (click)="onClick_Item(0)"id="item1"  [src]="itemImg[0]"/>
+  <img class="item" (click)="onClick_Item(1)"id="item2" [src]="itemImg[1]"/>
+  <img class="item" (click)="onClick_Item(2)"id="item3" [src]="itemImg[2]"/>
 
 
   <!--<button class="testbtn" (click)="onClick_Test()">테스트용{{userData.life}}</button>-->
@@ -77,9 +81,21 @@
       <div class="modal-score">{{modalScore}}</div>
 
       <img class="modal-btn" (click)="closeModal('stage-modal');" [src]="modalBtnImg"/>
-
     </div>
+      <img class="modal-item" [src]="modalItemImg"/>
 
   </div>
   <div class="modal-background"></div>
+</modal>
+
+
+
+<modal id="gameover-modal">
+  <div class="modal">
+    <img class="modal-gameoverImg" src="assets/gameover.png"/>
+  </div>
+
+  <div (click)="onClick_GameOver()" class="modal-background"></div>
+
+  <img (click)="onClick_GameOver()"  class="modal-reply" src="assets/replay.png"/>
 </modal>

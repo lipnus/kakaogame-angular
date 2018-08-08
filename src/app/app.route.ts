@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: 'splash', component: SplashComponent },
   { path: 'stage', component: StageComponent },
 
+
   //이전것들 일단 남겨놓음
   { path: 'mainpage', component: MainpageComponent, canActivate: [AuthGuard] },
   { path: 'ranking', component: RankingComponent, canActivate: [AuthGuard] },
@@ -40,4 +41,4 @@ const routes: Routes = [
   imports: [ RouterModule .forRoot (routes) ],
   exports: [ RouterModule ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

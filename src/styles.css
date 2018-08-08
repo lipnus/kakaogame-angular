@@ -7,6 +7,32 @@ html,body {
   /*background: #11162F;*/
 }
 
+.pcImg{
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+@media screen and (min-width: 500px){
+  .container {
+    visibility: hidden;
+  }
+
+  .pcImg{
+    visibility: visible;
+  }
+}
+
+
+
+
+
+
+
 @font-face {
  font-family: 'NanumBarunGothic';
  font-style: normal;
@@ -88,15 +114,15 @@ modal {
 
   /* modal container fixed across whole screen */
   /*background: #ffffff;*/
-  width: 80%;
+  width: 80vw;
   height: 280px;
 
   position: fixed;
-  top: 35vh;
+  top: 20vh;
   right: 0;
   bottom: 0;
   left: 50%;
-  margin-left: -40%;
+  margin-left: -40vw;
 
   /* z-index must be higher than .modal-background */
   z-index: 1000;
@@ -113,21 +139,29 @@ modal .modal-title{
 modal .modal-faceImg{
   position: absolute;
   display: inline-block;
-  width: 70%;
+  z-index: 1010;
+  width: 200px;
   position:absolute; left:50%;
   transform:translateX(-50%);
-  top: -100px;
+  top: -90px;
 }
 
 modal .modal-body{
+  position:absolute;
+  left: 50%;
+  transform:translateX(-50%);
   font-size: 13px;
   padding: 18px;
-  width: 100%;
+  width: 280px;
   height: 280px;
   background: #ffffff;
   border-radius: 20px 20px 20px 20px;
   text-align: center;
   box-sizing: border-box;
+}
+
+#nickname-modal-body{
+  height: 170px;
 }
 
 /*노래제목*/
@@ -140,7 +174,7 @@ modal .modal-songtitle{
 /*텍스트이미지*/
 modal .modal-textImg{
   display: inline-block;
-  width: 80%;
+  width: 240px;
 }
 
 /*점수*/
@@ -155,6 +189,14 @@ modal .modal-btn{
   width: 180px;
 }
 
+modal .modal-item{
+  position: fixed;
+  bottom: 20px;
+  width: 80%;
+  left: 50%;
+  transform:translateX(-50%);
+}
+
 modal .modal-background{
   position: fixed;
   z-index: -1;
@@ -163,19 +205,33 @@ modal .modal-background{
   top: 0;
   left: 0;
   background: #000000;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 modal .modal-icon{
   width: 70%;
 }
 
+
+
+body.modal-open {
+  /* body overflow is hidden to hide main scrollbar when modal window is open */
+  overflow: hidden;
+}
+
+
+
+
+
+
+/*닉네임*/
 modal .modal-button{
   border: none;
   outline: none;
   padding: 7px;
-  font-size: 15px;
-  margin-top: 15px;
+  font-size: 18px;
+  margin-top: 100px;
+  margin-right: 10px;
   box-sizing: border-box;
   background: none;
   color: #02101b;
@@ -183,7 +239,29 @@ modal .modal-button{
   float:right;
 }
 
-body.modal-open {
-  /* body overflow is hidden to hide main scrollbar when modal window is open */
-  overflow: hidden;
+.nickInfo{
+  position: absolute;
+  color: darkred;
+  bottom: 40px;
+  left: 65px;
+  text-align: center;
+
+}
+
+/*게임오버*/
+modal .modal-gameoverImg{
+  position: absolute;
+  width: 80%;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+modal .modal-reply{
+  position: fixed;
+  width: 80%;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+
 }

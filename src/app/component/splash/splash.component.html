@@ -1,16 +1,70 @@
+<img class="pcImg" src="assets/weblanding.jpg"/>
 <div class="container">
 
   <img id="bg" src="assets/main_bg.png" />
   <img id="logo" src="assets/logo.png"/>
-  <img id="info" src="assets/info.png"/>
+  <img id="info" src="assets/info.png" (click)="onClick_Test()"/>
 
-  <div id="kakao-login" (click)="onClick_kakao()"></div>
+  <img class="scoreBox" src="assets/score_bgbox.png"/>
+
+  <table *ngIf="isJoined" class="tg">
+    <tr>
+      <th class="tg-cpu1">
+        <img class="bullet" src="assets/score_bullet.png"/>
+        최고기록
+      </th>
+
+      <th class="tg-cpu2"></th>
+      <th class="tg-cpu3">{{score}} 점</th>
+    </tr>
+    <tr>
+      <th class="tg-cpu1">
+        <img class="bullet" src="assets/score_bullet.png"/>
+       나의등수
+      </th>
+      <td class="tg-cpu2"></td>
+      <td class="tg-cpu3">{{rank}} 위</td>
+    </tr>
+  </table>
+
+
+  <img id="login" src="assets/start.png" (click)="onClick_kakao()"/>
 
 </div>
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+<modal id="nickname-modal">
+  <div class="modal">
+
+    <div class="modal-body" id="nickname-modal-body">
+
+      <form>
+        <div class="group">
+          <input class="" maxlength="8" autocomplete="off" type="text" name="answerInput" [(ngModel)]="nicknameText"  (keydown)="onChange_Nickname()" required="required"/><span class="highlight" ></span><span class="bar"></span>
+          <label>닉네임을 입력해주세요</label>
+        </div>
+      </form>
+      <div *ngIf="isOverlap" class="nickInfo">이미 존재하는 닉네임입니다</div>
+
+      <button *ngIf="nicknameOk" class="modal-button" (click)="onClick_Join()">확인</button>
+    </div>
+  </div>
+  <div class="modal-background"></div>
+</modal>
 
 
 
