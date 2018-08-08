@@ -7,7 +7,7 @@ export class AuthGuard implements CanActivate {
     constructor(private router: Router) { }
 
     canActivate() {
-        if (localStorage.getItem('naver_id')) {
+        if (localStorage.getItem('user_pk')) {
             // logged in so return true
             return true;
         }

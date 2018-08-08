@@ -7,23 +7,22 @@
 
   <img class="scoreBox" src="assets/score_bgbox.png"/>
 
-  <table *ngIf="isJoined" class="tg">
+  <table *ngIf="isJoined" (click)="onClick_Rank()" class="tg">
     <tr>
       <th class="tg-cpu1">
         <img class="bullet" src="assets/score_bullet.png"/>
         최고기록
       </th>
-
-      <th class="tg-cpu2"></th>
-      <th class="tg-cpu3">{{score}} 점</th>
+      <th class="tg-cpu2">{{score}} 점</th>
+      <td class="tg-cpu3"></td>
     </tr>
     <tr>
       <th class="tg-cpu1">
         <img class="bullet" src="assets/score_bullet.png"/>
        나의등수
       </th>
-      <td class="tg-cpu2"></td>
-      <td class="tg-cpu3">{{rank}} 위</td>
+      <td class="tg-cpu2">{{rank}} 위</td>
+      <td class="tg-cpu3"></td>
     </tr>
   </table>
 
@@ -33,7 +32,13 @@
 </div>
 
 
+<modal id="info-modal">
+  <div class="modal">
+    <img class="info" src="assets/info_popup.png"/>
 
+  </div>
+  <div class="modal-background"></div>
+</modal>
 
 
 

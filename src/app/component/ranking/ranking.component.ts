@@ -11,7 +11,7 @@ import { PostToServerService } from '../../service/index';
 import { CashService } from '../../service/index';
 
 //[model]
-import { Ranking } from '../../model/index';
+import {Ranking, UserData} from '../../model/index';
 import * as mGlobal from '../../global-variables';  //전역변수
 import {Location} from '@angular/common';
 
@@ -23,6 +23,8 @@ import {Location} from '@angular/common';
 export class RankingComponent implements OnInit {
 
   userList: Array<Ranking> = [];
+  rank: number;
+  userData: UserData;
 
   constructor(
     private router: Router,
@@ -32,15 +34,22 @@ export class RankingComponent implements OnInit {
     private http: HttpClient,) { }
 
   ngOnInit() {
-    this.postRanking();
+
+    if (localStorage.getItem('user_pk')) {
+      let auth = JSON.parse(localStorage.getItem('user_pk'));
+      this.postRanking(auth);
+    }
+
   }
 
-  postRanking(){
-    let path = '/ranking';
-    let postData = {naver_id:this.cashService.getNaverId()};
+  postRanking(user_pk: string){
+    let path = '/ranking/all';
+    let postData = {user_pk: user_pk};
 
     this.postToServerService.postServer(path, postData).subscribe(data => {
-      this.userList = data;
+      this.userList = data.user;
+      this.userData = data.userData;
+      this.rank = data.rank;
     });
   }
 

@@ -20,13 +20,13 @@ const routes: Routes = [
 
   //카카오게임
   { path: '', component: SplashComponent },
-  { path: 'splash', component: SplashComponent },
+  { path: 'splash', component: SplashComponent, canActivate: [AuthGuard] },
   { path: 'stage', component: StageComponent },
 
 
   //이전것들 일단 남겨놓음
   { path: 'mainpage', component: MainpageComponent, canActivate: [AuthGuard] },
-  { path: 'ranking', component: RankingComponent, canActivate: [AuthGuard] },
+  { path: 'ranking', component: RankingComponent },
   { path: 'information', component: InformationComponent, canActivate: [AuthGuard] },
   { path: 'quiz', component: QuizComponent, canActivate: [AuthGuard] },
   { path: 'answer', component: AnswerComponent, canActivate: [AuthGuard] },

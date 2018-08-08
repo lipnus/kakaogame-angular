@@ -27,10 +27,17 @@
   <img *ngIf="userData?.life<3" class="heart3" src="assets/heart_blank.png"/>
 
   <!--스테이지-->
-  <div class="stage" (click)="onClick_Test()">Stage #{{userData?.stage}}</div>
+  <div class="stage" *ngIf="theme==1 || theme==3 || theme==5" (click)="onClick_Test()">Stage #{{userData?.stage}}</div>
+
+  <div class="stage" *ngIf="theme==2 || theme==4" id="stage-white" (click)="onClick_Test()">Stage #{{userData?.stage}}</div>
+
 
   <!--포인트-->
-  <div class="point">Point <span id="point-number">{{userData?.score_stage}}</span></div>
+  <div class="point" *ngIf="theme==1 || theme==3 || theme==5">Point <span class="point-number">{{userData?.score_stage}}</span></div>
+
+  <div class="point" *ngIf="theme==2 || theme==4" id="point-white">Point <span class="point-number">{{userData?.score_stage}}</span></div>
+
+
 
   <!--말풍선-->
   <img *ngIf="!isPlaying" id="bubble-img"[src]="bubbleImg"  (click)="onClick_Bubble()"/>
@@ -92,10 +99,59 @@
 
 <modal id="gameover-modal">
   <div class="modal">
-    <img class="modal-gameoverImg" src="assets/gameover.png"/>
+
+
+    <div class="modal-myrank">
+      <img class="modal-gameoverImg" src="assets/gameover.png"/>
+      <div id="rank-text">{{userData.nickname}}님의 순위</div>
+      <div id="rank">{{rank}}위</div>
+
+      <div class="line"></div>
+        <table class="tg">
+          <tr>
+            <th class="tg-cpu1">
+              <img class="resultImg" src="assets/result_perfect.png"/>
+            </th>
+            <th class="tg-cpu2">{{perfectCount}}</th>
+          </tr>
+        </table>
+
+      <div class="line"></div>
+        <table class="tg">
+          <tr>
+            <th class="tg-cpu1">
+              <img class="resultImg" src="assets/result_great.png"/>
+            </th>
+            <th class="tg-cpu2">{{greatCount}}</th>
+          </tr>
+        </table>
+
+      <div class="line"></div>
+        <table class="tg">
+          <tr>
+            <th class="tg-cpu1">
+              <img class="resultImg" src="assets/result_bad.png"/>
+            </th>
+            <th class="tg-cpu2">{{badCount}}</th>
+          </tr>
+        </table>
+      <div class="line"></div>
+        <table class="score-table">
+          <tr>
+            <th class="tg-cpu1">
+            </th>
+            <th class="tg-cpu2" id="score" >{{finalScore}}</th>
+          </tr>
+        </table>
+    </div>
+
   </div>
 
   <div (click)="onClick_GameOver()" class="modal-background"></div>
 
   <img (click)="onClick_GameOver()"  class="modal-reply" src="assets/replay.png"/>
 </modal>
+
+
+
+

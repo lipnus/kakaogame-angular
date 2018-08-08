@@ -1,49 +1,59 @@
 <div class="ranking-background">
 <div class="ranking-container">
 
-    <div class="title">전체랭킹</div>
-    <div class="sub-title">상품은 6월 18일 밤12시 순위 기준</div>
+    <div class="title">RANKING</div>
 
+    <div class="myrank">나의순위</div>
+
+  <div class="rankBox">
+
+      <table  class="tg">
+        <tr>
+          <th class="tg-cpu1">{{rank}}위</th>
+          <th class="tg-cpu2">{{userData.nickname}}</th>
+          <td class="tg-cpu3">{{userData.score_best}}점</td>
+        </tr>
+      </table>
+   </div>
+
+
+
+
+
+
+  <!--리스트-->
     <div *ngFor="let user of userList; let idx=index">
 
     <!-- 선 -->
-    <div *ngIf="idx<3" class="line" style="background: #30a75f;"></div>
-    <div *ngIf="3<=idx&&idx<7" class="line" style="background: #4bc6ff;"></div>
-    <div *ngIf="7<=idx" class="line" style="background: #ffffff;"></div>
+    <div class="line"></div>
 
     <div class="content-text">
-
 
       <table class="ranking-table">
         <tr>
 
           <!-- 순위 -->
-          <td *ngIf="idx<3" class="ranking-td1" style="color: #30a75f;">{{idx+1}}위</td>
-          <td *ngIf="3<=idx && idx<7" class="ranking-td1" style="color: #4bc6ff;">{{idx+1}}위</td>
-          <td *ngIf="7<=idx" class="ranking-td1" style="color: #ffffff;">{{idx+1}}위</td>
+          <td *ngIf="idx<3" class="ranking-td1">
+            <img *ngIf="idx==0" class="crown" src="assets/ranking_1st.png"/>
+            <img *ngIf="idx==1" class="crown" src="assets/ranking_2nd.png"/>
+            <img *ngIf="idx==2" class="crown" src="assets/ranking_3rd.png"/>
+
+            {{idx+1}} 위
+          </td>
+          <td *ngIf="3<=idx" class="ranking-td1">{{idx+1}} 위 </td>
 
           <!-- 이름 -->
           <td class="ranking-td2">{{user.nickname}}</td>
 
           <!-- 점수 -->
-          <td *ngIf="idx<3" class="ranking-td3" style="color: #30a75f;">{{user.score}}</td>
-          <td *ngIf="3<=idx && idx<7" class="ranking-td3" style="color: #4bc6ff;">{{user.score}}</td>
-          <td *ngIf="7<=idx" class="ranking-td3" style="color: #ffffff;">{{user.score}}</td>
+          <td class="ranking-td3" >{{user.score}}</td>
 
-          <!-- 뱃지 -->
-          <td class="ranking-td4">
-            <img  *ngIf="idx<3" class="badge" src="assets/starbucksbadge.png"/>
-            <img *ngIf="3<=idx && idx<7" class="badge" src="assets/maeilbadge.png"/>
-          </td>
 
         </tr>
       </table>
     </div>
 
-    <img *ngIf="idx==2" class="gift-line" src="assets/starbucksboundary.png"/>
-    <img *ngIf="idx==6" class="gift-line" src="assets/maeilboundary.png"/>
 
-    </div>
 
 
 

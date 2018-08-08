@@ -250,12 +250,66 @@ modal .modal-button{
 
 /*게임오버*/
 modal .modal-gameoverImg{
-  position: absolute;
+  display: inline-block;
   width: 80%;
-  top: -60px;
+  margin-bottom: 30px;
+}
+
+modal .modal-myrank{
+  position: absolute;
+  text-align: center;
+  width: 280px;
+  top: -110px;
   left: 50%;
   transform: translateX(-50%);
 }
+
+modal #rank-text{
+  color: #c6c6c6;
+  font-size: 12px;
+}
+
+modal #rank{
+  color: #ffffff;
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+modal .line{
+  width: 100%;
+  height: 1px;
+  background: #c6c6c6;
+}
+
+modal .resultImg{
+  margin-top: 5px;
+  width: 120px;
+  margin-bottom: 5px;
+}
+
+modal #score{
+  height: 30px;
+  font-size: 30px;
+}
+
+modal .tg-cpu1{
+  width: 130px;
+}
+
+modal .tg-cpu2{
+  width: 120px;
+  text-align: right;
+  font-size: 20px;
+  color: #909090;
+  font-weight: 800;
+}
+
+modal .score-table{
+  margin-top: 5px;
+}
+
+
 
 modal .modal-reply{
   position: fixed;
@@ -264,4 +318,20 @@ modal .modal-reply{
   left: 50%;
   transform: translateX(-50%);
 
+}
+
+
+
+
+
+
+/*인포모달*/
+modal .info{
+  position: absolute;
+  z-index: 25;
+  display: inline-block;
+  width: 280px;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
 }

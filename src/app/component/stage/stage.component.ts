@@ -55,6 +55,13 @@ export class StageComponent implements OnInit {
   isFirstPlayed: boolean; //처음 트는 것인지
   bubbleTalking: String; //말풍선 안의 대화
 
+  //결과
+  perfectCount:number;
+  greatCount:number;
+  badCount:number;
+  finalScore:number;
+  rank: number;
+
   constructor(private modalService: ModalService,
               private globalService: GlobalService,
               private postToServerService: PostToServerService,
@@ -245,6 +252,9 @@ export class StageComponent implements OnInit {
   }
 
   onClick_Pass(){
+
+    this.userData.bad += 1;
+
     this.userData.score_stage -= 40;
     if(this.userData.score_stage < 0){
       this.userData.score_stage = 0;
@@ -456,9 +466,11 @@ export class StageComponent implements OnInit {
       let type;
       if(this.bonus==true){
         type = "perfect"
+        this.userData.perfect += 1;
         this.userData.score_stage += 300
       }else{
         type = "great"
+        this.userData.great += 1;
         this.userData.score_stage += 100
       }
 
@@ -571,7 +583,11 @@ export class StageComponent implements OnInit {
     let path = '/user';
     let postData = {userData: this.userData};
     this.postToServerService.postServer(path, postData).subscribe(data => {
-      console.log("userData Update Done");
+
+      if(this.userData.score_stage==0){
+        this.postRanking( this.userData.user_pk );
+      }
+
     });
   }
 
@@ -589,6 +605,17 @@ export class StageComponent implements OnInit {
       this.themeControl();
       this.itemControl();
       this.postMusic();
+    });
+  }
+
+  //서버에서 랭킹정보를 가져온다
+  postRanking( user_pk:number ){
+    let path = '/ranking';
+
+    let postData = {user_pk: user_pk};
+    this.postToServerService.postServer(path, postData).subscribe(data => {
+
+      this.rank = data.rank;
     });
   }
 
@@ -612,6 +639,13 @@ export class StageComponent implements OnInit {
     if(this.userData.score_best < this.userData.score_stage){
       this.userData.score_best = this.userData.score_stage;
     }
+
+    this.perfectCount = this.userData.perfect;
+    this.greatCount = this.userData.great;
+    this.badCount = this.userData.bad;
+    this.finalScore = this.userData.score_stage;
+
+    console.log("aa: " +  this.userData.great);
 
     this.modalService.open('gameover-modal');
     this.userData.life = 3;

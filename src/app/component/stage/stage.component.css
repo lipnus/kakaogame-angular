@@ -78,6 +78,10 @@
   font-weight: 900;
 }
 
+#stage-white{
+  color: #ffffff;
+}
+
 .number{
   position: absolute;
   z-index: 25;
@@ -102,8 +106,12 @@
   right: 140px;
 }
 
-#point-number{
+.point-number{
   font-weight: 700;
+}
+
+#point-white{
+  color:#ffffff;
 }
 
 #bubble-img{

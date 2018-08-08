@@ -74,8 +74,9 @@ export class SplashComponent implements OnInit {
   }
 
   onClick_Test(){
-    localStorage.removeItem('user_pk');
-    this.modalService.open('nickname-modal');
+    this.modalService.open('info-modal');
+    // localStorage.removeItem('user_pk');
+    // this.modalService.open('nickname-modal');
   }
 
 
@@ -122,6 +123,9 @@ export class SplashComponent implements OnInit {
     });
   }
 
+  onClick_Rank(){
+    this.router.navigate(['/ranking']);
+  }
 
 
 }

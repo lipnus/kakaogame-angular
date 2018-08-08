@@ -45,17 +45,20 @@
 }
 
 .tg-cpu2{
-  width: 80px;
-  color: #ffffff;
-  font-weight: 200;
-}
-
-.tg-cpu3{
+  weight: 40px;
   font-size: 18px;
   height: 30px;
   color: #ffffff;
   font-weight: 600;
+  text-align: right;
 }
+
+.tg-cpu3{
+  width: 25px;
+  color: #ffffff;
+  font-weight: 200;
+}
+
 
 .bullet{
   width: 8px;
